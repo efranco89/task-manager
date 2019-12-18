@@ -54,7 +54,11 @@ var app = new Vue({
     editTask: function(event, id){
       let task = this.tasks.find(item => item.id == id);
       if (task) {
-        this.task = { name: task.name, description: task.description, completed: task.completed };
+        this.task = { id: id,
+                      name: task.name,
+                      description: task.description,
+                      completed: task.completed
+                    };
       }
     },
     deleteTask: function(event, id){
@@ -64,6 +68,16 @@ var app = new Vue({
         this.$delete(this.tasks, taskIndex);
       }
       console.log("task deleted")
+    },
+    updateTask: function(event, id){
+      event.stopImmediatePropagation();
+      event.preventDefault();
+      let task = this.tasks.find(item => item.id == id);
+      if (task) {
+        task.name = this.task.name;
+        task.description = this.task.description;
+        task.completed = this.task.completed;
+      }
     }
   }
 })
