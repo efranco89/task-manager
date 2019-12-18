@@ -21,6 +21,9 @@
         </div>
       </div>
       <div class="ui container pusher">
+        <div v-for="task in tasks">
+          {{task.id}} {{ task.name }}: {{ task.description}} completed? {{ task.completed }}
+        </div>
         {{message}}
       </div>
     </div>
