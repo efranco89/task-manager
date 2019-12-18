@@ -15,6 +15,7 @@ var app = new Vue({
               </div>
             </div>
             <div class="right floated three wide column">
+              <i class="icon trash red" alt="Delete" v-on:click="app.deleteTask($event, task.id)"></i>
             </div>
           </div>
         </div>
@@ -42,7 +43,15 @@ var app = new Vue({
   methods: {
     toggleDone: function(event, id){
       let task = this.tasks.find(item => item.id == id);
-      console.log(task)
+      if (task) {
+        task.completed = !task.completed;
+        console.log('task toggled')
+      }
+    },
+
+    deleteTask: function(event, id){
+      console.log("task deleted")
     }
+
   }
 })
