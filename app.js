@@ -54,7 +54,7 @@ var app = new Vue({
     editTask: function(event, id){
       let task = this.tasks.find(item => item.id == id);
       if (task) {
-        this.task = task;
+        this.task = { name: task.name, description: task.description, completed: task.completed };
       }
     },
     deleteTask: function(event, id){
