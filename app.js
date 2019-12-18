@@ -31,6 +31,7 @@ var app = new Vue({
       { id: 3, name: 'Todo 3', description: 'This is a completed todo', completed: true },
       { id: 4, name: 'Todo 4', description: 'This is a completed todo', completed: true },
     ],
+    task: {},
     message: 'Hello World!'
   },
   computed: {
@@ -53,7 +54,7 @@ var app = new Vue({
     editTask: function(event, id){
       let task = this.tasks.find(item => item.id == id);
       if (task) {
-        console.log(task)
+        this.task = task;
       }
     },
     deleteTask: function(event, id){
