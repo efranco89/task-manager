@@ -21,10 +21,26 @@
         </div>
       </div>
       <div class="ui container pusher">
-        <div v-for="task in tasks">
-          {{task.id}} {{ task.name }}: {{ task.description}} completed? {{ task.completed }}
+        <div class="ui grid">
+          <div class="six wide column">
+            <div id="todo" class="tasklist">
+              <div v-for="task in todoTasks">
+                {{task.id}} {{ task.name }}: {{ task.description}} completed? {{ task.completed }}
+              </div>
+            </div>
+
+            <div id="completed" class="tasklist">
+              <div v-for="task in completedTasks">
+                {{task.id}} {{ task.name }}: {{ task.description}} completed? {{ task.completed }}
+              </div>
+            </div>
+
+          </div>
+          <div class="six wide column">
+
+          </div>
+
         </div>
-        {{message}}
       </div>
     </div>
 
