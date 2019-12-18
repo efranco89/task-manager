@@ -62,14 +62,11 @@ var app = new Vue({
       }
     },
     createTask: function(event){
-      event.preventDefault();
-
       if (!this.task.completed) {
         this.task.completed = false;
       }else {
         this.task.complete = true;
       }
-
       let taskId = this.nextId;
       this.task.id = taskId;
       let newTask = Object.assign({}, this.task);
@@ -99,7 +96,6 @@ var app = new Vue({
     },
     updateTask: function(event, id){
       event.stopImmediatePropagation();
-      event.preventDefault();
       let task = this.tasks.find(item => item.id == id);
       if (task) {
         task.name = this.task.name;

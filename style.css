@@ -6,6 +6,10 @@
   background: lightgreen;
 }
 
+.task.done label{
+  text-decoration: line-through;
+}
+
 .task.todo {
   background: lightgoldenrodyellow;
 }
